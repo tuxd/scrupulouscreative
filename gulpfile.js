@@ -43,7 +43,7 @@ var PATHS = {
     'bower_components/foundation-sites/js/foundation.interchange.js',
     'bower_components/foundation-sites/js/foundation.magellan.js',
     //'bower_components/foundation-sites/js/foundation.offcanvas.js',
-    //'bower_components/foundation-sites/js/foundation.orbit.js',
+    'bower_components/foundation-sites/js/foundation.orbit.js',
     //'bower_components/foundation-sites/js/foundation.responsiveMenu.js',
     //'bower_components/foundation-sites/js/foundation.responsiveToggle.js',
     //'bower_components/foundation-sites/js/foundation.reveal.js',

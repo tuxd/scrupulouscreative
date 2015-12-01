@@ -59,11 +59,6 @@
   }
 }
 
-section {
-  height:auto;
-  min-height: 50em;
-}
-
 ul.menu {
   margin-top: 3.5em;
   text-align: right;
@@ -125,6 +120,8 @@ h1, h2, h3 {
 }
 
 section {
+  min-height: 20em;
+
   .row {
     padding: 3em 0;
   }
@@ -132,6 +129,33 @@ section {
 
 #work {
   background: #F3F3F9;
+}
+#quotes {
+  background: #151515;
+
+  li {
+    -webkit-user-select: none;
+    outline: none;
+  }
+  h2 {
+    font-family: $body-font-family;
+    color: #FFF;
+    text-transform: none;
+
+    @include breakpoint(small only) {
+
+    }
+    &:before {
+      content: '\201C';
+      font-size: 10em;
+      left: -5em;
+      position: absolute;
+    }
+    span {
+      font-size: 50%;
+      padding-left:1em;
+    }
+  }
 }
 
 .button {

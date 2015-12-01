@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "foundation-ssg",
   "version": "1.0.0",
   "authors": [
@@ -18,24 +17,6 @@
   "dependencies": {
     "foundation-sites": "~6.0.0",
     "motion-ui": "~1.1.0"
-=======
-  "name": "foundation-sites",
-  "version": "6.0.0-alpha.1",
-  "main": [
-    "css/foundation.css",
-    "css/foundation.css.map",
-    "js/foundation.js"
-  ],
-  "ignore": [
-    "config",
-    "docs",
-    "lib",
-    "spec"
-  ],
-  "dependencies": {
-    "jquery": ">= 2.1.0",
-    "what-input": "~1.1.2"
->>>>>>> 9ccbf6c7602bca4e697a4d2a0cbaea1cd94556a9
   },
   "private": true
 }
