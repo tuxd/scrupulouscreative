@@ -4,9 +4,10 @@
 @import 'settings';
 @import 'foundation';
 //@import 'motion-ui';
+@include foundation-flex-grid;
 
 @include foundation-global-styles;
-@include foundation-grid;
+//@include foundation-grid;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -43,4 +44,8 @@
 //@include motion-ui-transitions;
 //@include motion-ui-animations;
 
+@import 'components/slick';
+@import 'components/form';
+@import 'components/dropkick';
+@import 'components/colorbox';
 @import 'components/common';

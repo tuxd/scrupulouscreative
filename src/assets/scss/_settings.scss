@@ -51,13 +51,17 @@ $secondary-color: #4ea1c0;
 $tertiary-color: #70bea0;
 $success-color: $tertiary-color;
 $warning-color: #ffae00;
-$alert-color: #ec5840;
+$alert-color: #df1f3b;
 $light-gray: #e6e6e6;
+$v-light-gray: #F3F3F3;
+$vv-light-gray: #FAFAFA;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $offblack: #222;
+$minion: #F5E050;
+$dark-yellow: #eec035;
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: 'Droid Serif', serif, Helvetica, Roboto, Arial, sans-serif;
@@ -71,6 +75,7 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $rem-base: 16px;
 $ease: ease-in-out;
+$box-shadow: 0 10px 30px rgba(0,0,0, 0.05);
 
 // 2. Breakpoints
 // --------------

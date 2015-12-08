@@ -1,3 +1,7 @@
+.no-padding {
+  padding: 0;
+}
+
 .row-full-width {
   padding: 0;
   margin-left: 0;
@@ -6,6 +10,19 @@
   text-align: center;
   display: block;
   clear: both;
+
+  &.banner {
+    max-height: 18em;
+    overflow: hidden;
+    img {
+      vertical-align: baseline;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: none;
+  }
 
   h6 {
     position: absolute;
@@ -20,16 +37,28 @@
   }
 }
 
+a {
+  color: $offblack;
+  transition: color 0.3s $ease;
+  &:hover {
+    color:#666;
+  }
+}
+
 .logo {
   float: left;
   width: auto;
   transform: all 0.3s $ease;
+  @include clearfix;
 }
 
 .logo-top-line {
   font-family: 'Old Sans Black', Arial, Helvetica, sans-serif;
   border-bottom: 4px solid #222;
-  padding-top: 1em;
+  padding-top: 0.5em;
+  @include breakpoint(large up) {
+    padding-top: 1em;
+  }
   line-height: 0.625em;
   letter-spacing: -0.05em;
   color: #222;
@@ -52,19 +81,76 @@
   font-size: 23px;
   margin-right: -0.25em;
   opacity:0;
-  perspective: 500px;
+  //perspective: 500px;
 
   @include breakpoint(small only) {
     font-size: 15px;
   }
 }
 
+.navicon {
+  width: 3em;
+  height: 2.75em;
+  display: block;
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint(large up) {
+    display: none;
+  }
+
+  .bar {
+    background-color: $offblack;
+    display: block;
+    width: 2.5em;
+    height: 5px;
+    position: absolute;
+    right: 0.5em;
+    transition: all 0.4s $ease;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bar:first-child {
+    transform: translateY(13px);
+  }
+  .bar:last-child {
+    transform: translateY(26px);
+  }
+
+  &.x {
+    .bar {
+      transform: rotate(45deg);
+      margin-top:14px;
+      background: $alert-color;
+    }
+
+    .bar:first-child {
+      transform: rotate(-45deg);
+    }
+
+    .bar:last-child {
+      transform: translateY(14px) rotate(0deg);
+    }
+  }
+}
+
 ul.menu {
-  margin-top: 3.5em;
-  text-align: right;
-  opacity:0;
-  perspective: 500px;
+  margin-top: 0;
+  opacity: 0;
+  padding: 0.9375em 0 0.9375em 0.9375em;
+  background: #fff;
+  display: none;
+  float: none;
+  text-align: left;
+  z-index: 1000;
+  position: absolute;
+
   li {
+    display: block;
     padding: 1em 0 1em 3em;
     a {
       font: 1.5em 'Old Sans Black', Arial, Helvetica;
@@ -73,7 +159,7 @@ ul.menu {
       padding: 0;
       line-height: 0.7em;
       border-bottom: 2px solid #FFF;
-      transition: all 0.2s $ease;
+      transition: all 0.1s $ease;
       transform: rotateX(90deg);
       opacity: 0;
       &:hover, &.active {
@@ -81,16 +167,60 @@ ul.menu {
       }
     }
   }
+
+  @include breakpoint(large up) {
+    display: block;
+    float: right;
+    position: relative;
+    margin-top: 3.5em;
+    li {
+      display: inline-block;
+    }
+  }
 }
+
+nav {
+  clear: both;
+    &.open {
+      ul.menu {
+      display: block;
+      width: 100%;
+      margin: 0;
+        li {
+          padding-left: 0;
+          width: 46%;
+          margin-right: 4%;
+          float: left;
+          a {
+            font: 1.5em 'Old Sans Black', Arial, Helvetica;
+          }
+        }
+    }
+  }
+}
+
+
 
 h1, h2, h3 {
   text-transform: uppercase;
 }
 
+
 .sticky {
   background: #FFF;
+  position: relative;
+  @include breakpoint(large up){
+    position: absolute;
+  }
+
+  .sticky-row {
+    perspective: 1000px;
+    @include clearfix;
+    z-index: 500;
+  }
+
   &.is-stuck {
-    box-shadow: 0 10px 30px rgba(255,255,255, 0.9);
+    box-shadow: $box-shadow;
 
     .sticky-row {
       margin-top: 4em;
@@ -98,14 +228,31 @@ h1, h2, h3 {
       margin-bottom: -4em;
       position:relative;
       transition: all 0.5s $ease;
+      clear: both;
+
     }
     ul.menu {
-      margin-top: 1.5em;
       margin-bottom:0;
+
+      @include breakpoint(large up) {
+        margin-top: 1.5em;
+      }
       li a {
         font-size: 1em;
       }
     }
+
+    nav {
+      &.open {
+        ul.menu {
+          li a {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+
+
     .logo {
       .logo-top-line {
         //padding-top: 0.25em;
@@ -120,40 +267,154 @@ h1, h2, h3 {
 }
 
 section {
-  min-height: 20em;
+  h2 {
+    outline: none;
+    span {
+      color: $offblack;
+      padding-right: 0.25em;
+      width: 1.5em;
+      display: inline-block;
+      text-align: left;
 
-  .row {
+      &:before {
+        top: 0.125em;
+        position: relative;
+      }
+
+      &.icon-group {
+        &:before {
+          top: 0;
+          position: static;
+        }
+      }
+
+      &.icon-question-circle {
+        padding-left: 0.25em;
+      }
+      &.icon-laptop, &.icon-comments-o {
+        padding-left: 0.125em;
+      }
+      font-size: 1.25em;
+      top: 0.125em;
+    }
+  }
+  > .row {
     padding: 3em 0;
   }
+  p {
+    padding-top: 1em;
+    @include breakpoint(xlarge up) {
+      font-size:1.25em;
+    }
+  }
+
 }
 
+.sections {
+  @include clearfix;
+}
+
+
+#process {
+  background: $tertiary-color; /* Old browsers */
+  background: -moz-linear-gradient(left,  $tertiary-color 50%, $primary-color 51%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  $tertiary-color 50%, $primary-color 51%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  $tertiary-color 50%, $primary-color 51%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$tertiary-color', endColorstr='$primary-color',GradientType=1 ); /* IE6-9 */
+
+
+  span {
+    @include breakpoint(small) {
+      font-size: 3.5em;
+    }
+    @include breakpoint(medium) {
+      font-size: 5em;
+    }
+    @include breakpoint(large up) {
+      font-size: 7.5em;
+    }
+    color: #FFF;
+    display: block;
+    text-align: center;
+  }
+  h2 {
+    color: #FFF;
+    text-transform: none;
+    text-align: center;
+  }
+  p {
+    color: #FFF;
+    font-family: "Droid Serif", "Times New Roman";
+    text-align: center;
+    padding: 0 2em;
+  }
+
+  .discover {
+    background: $tertiary-color;
+    padding: 2em 0em;
+  }
+  .design {
+    background: $secondary-color;
+    padding: 2em 0em;
+    .icon-pencil-square-o {
+      padding-left: 0.25em;
+    }
+  }
+  .develop {
+    background: $primary-color;
+    padding: 2em 0em;
+  }
+}
 #work {
-  background: #F3F3F9;
+  background: $v-light-gray;
+  h3 {
+    margin-top: 2em;
+  }
 }
 #quotes {
   background: #151515;
+  margin-bottom: 1em;
+  > div {
+    h2 {
+      padding-top: 1.5em;
+      font-family: $body-font-family;
+      color: #FFF;
+      text-transform: none;
+      @include grid-col;
+      text-align: left;
+      &:before {
+        content: '“';
+        font-size: 4em;
+        left: -.4em;
+        margin-top: -0.4em;
+        position: absolute;
+        z-index: 3;
+      }
 
-  li {
-    -webkit-user-select: none;
-    outline: none;
-  }
-  h2 {
-    font-family: $body-font-family;
-    color: #FFF;
-    text-transform: none;
+      @include breakpoint(medium only) {
+        font-size:1.625em;
+      }
 
-    @include breakpoint(small only) {
-
-    }
-    &:before {
-      content: '\201C';
-      font-size: 10em;
-      left: -5em;
-      position: absolute;
-    }
-    span {
-      font-size: 50%;
-      padding-left:1em;
+      @include breakpoint(large down) {
+        @include grid-col-size(10);
+        @include grid-col-pos(1);
+        &:before {
+          left: -.3em;
+        }
+      }
+      @include breakpoint(xlarge up) {
+        @include grid-col-size(8);
+        @include grid-col-pos(2);
+      }
+      span {
+        font-size: 50%;
+        display: block;
+        text-align: right;
+        width: auto;
+        color: #CCC;
+        outline: none;
+        padding-bottom: 2em;
+      }
     }
   }
 }
@@ -172,5 +433,123 @@ section {
     background: none;
     color: $secondary-color;
     border-color: $primary-color;
+  }
+
+  &.yellow {
+    &:hover, &:focus, &:active {
+      background: none;
+      color: $dark-yellow;
+      border-color: $minion;
+    }
+  }
+}
+
+input.button {
+  width: 100%;
+}
+
+.work {
+  padding-top: 2em;
+  padding-bottom: 1em;
+
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  img {
+    box-shadow: $box-shadow;
+    text-align: center;
+
+    &.mobile {
+      margin:0 25%;
+      width:50%;
+    }
+  }
+}
+
+$slick-prev-character: "\f104" !default;
+$slick-next-character: "\f105" !default;
+
+.slick-arrow {
+  color:#999;
+  transition: color 0.3s $ease;
+  &:hover {
+    color:#FFF;
+  }
+}
+
+.slick-prev {
+  left: 10px;
+  [dir="rtl"] & {
+    left: auto;
+    right: 10px;
+  }
+  &:before {
+    content: $slick-prev-character;
+    [dir="rtl"] & {
+      content: $slick-next-character;
+    }
+  }
+}
+
+.slick-next {
+  right: 10px;
+  [dir="rtl"] & {
+    left: 10px;
+    right: auto;
+  }
+  &:before {
+    content: $slick-next-character;
+    [dir="rtl"] & {
+      content: $slick-prev-character;
+    }
+  }
+}
+
+
+
+button.slick-prev:before,
+button.slick-next:before,
+button.slick-arrow {
+  display: none;
+  visibility: hidden;
+}
+
+.slick-next {
+  position: absolute;
+  right: 1em;
+  background: none;
+  top:50%;
+  margin-top:-0.5em;
+  font-size: 2.5em;
+  outline: none;
+  &:before {
+    font-family: "icomoon";
+    content: "\f105";
+  }
+}
+
+.slick-prev {
+  position: absolute;
+  left: 1em;
+  font-size: 2.5em;
+  margin-top:-0.5em;
+  top:50%;
+  outline: none;
+  background: none;
+  &:before {
+    font-family: "icomoon";
+    content: "\f104";
+  }
+}
+
+
+@include breakpoint(large up) {
+  button.slick-prev:before,
+  button.slick-next:before,
+  button.slick-arrow {
+    display: block;
+    visibility: visible;
   }
 }

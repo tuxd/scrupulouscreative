@@ -1,0 +1,32 @@
+// FORMS
+
+form {
+  margin-top: 1em;
+  
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    padding: 1em;
+    font: 1em "Droid Serif", "Times New Roman";
+    color: $offblack;
+    background: $v-light-gray;
+    box-shadow: none;
+    border: none;
+    transition: border-color 0.3s $ease;
+    border-bottom: 2px solid #FFF;
+    height: auto;
+
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border-bottom: 2px solid $minion;
+      background: $vv-light-gray;
+    }
+  }
+  textarea {
+    height: 6em;
+  }
+
+  ::placeholder {
+    color: $offblack;
+  }
+
+}

@@ -16,7 +16,10 @@
   ],
   "dependencies": {
     "foundation-sites": "~6.0.0",
-    "motion-ui": "~1.1.0"
+    "motion-ui": "~1.1.0",
+    "slick-carousel": "~1.5.9",
+    "dropkick": "~2.1.7",
+    "colorbox": "~1.6.3"
   },
   "private": true
 }

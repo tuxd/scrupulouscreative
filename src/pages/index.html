@@ -1,10 +1,11 @@
-<div class="row-full-width">
+<a id="who" data-magellan-target="who"></a>
+<div class="row-full-width banner">
   <h6>Ho Chi Minh City, Vietnam</h6>
-  <img src="{{root}}assets/img/header-ho-chi-minh.jpg" alt="Ho Chi Minh City Web Development" />
+  <img src="{{root}}assets/img/header-ho-chi-minh.jpg" alt="Ho Chi Minh City Web Development" class="align-middle"/>
 </div>
 
 <div data-sticky-container>
-  <div class="sticky" data-sticky data-margin-top="0" style="width:100%; padding:0" data-anchor="sections">
+  <div class="sticky" data-sticky data-margin-top="0" style="width:100%; padding:0" data-anchor="sections" data-sticky-on="small">
     <div class="row sticky-row">
       <div class="small-9 large-5 columns">
         <div class="logo" id="logo">
@@ -15,8 +16,14 @@
         </div>
       </div>
 
-      <nav class="columns small-3 large-7" data-magellan data-options="threshold:130; animationDuration:300;">
-        <ul class="horizontal menu float-right">
+      <div class="navicon" id="navicon">
+        <s class="bar"></s>
+        <s class="bar"></s>
+        <s class="bar"></s>
+      </div>
+
+      <nav class="columns small-12 large-7 no-padding">
+        <ul class="horizontal menu" data-magellan data-options="threshold:100; animationDuration:500">
           <li><a href="#who">Who</a></li>
           <li><a href="#why">Why</a></li>
           <li><a href="#work">Work</a></li>
@@ -30,58 +37,109 @@
 
 
 <div class="sections" id="sections">
-  <section id="who" data-magellan-target="who" class="row-full-width">
+  <section  class="row-full-width">
     <div class="row">
       <div class="columns small-12 text-left">
-        <h2>Who</h2>
+        <h2><span class="icon-group"></span>Who</h2>
         <p>We are remote working web professionals specialising in responsive design and development. We can make you a simple WordPress backend or a custom CMS with an online store. We have been making websites for some time now and we’ve enjoyed the journey the internet has taken from desktops to laptops to smart phones. The internet is an exciting place and we love helping businesses get a web presence or refresh and rethink their current website.</p>
-        <button href="#contact" class="button float-center">Contact us<span class="show-for-large"> today</span></button>
+
+        <a class="button float-center small-10 medium-8 large-4 contact-button">Contact us<span class="show-for-large"> today</span></a>
       </div>
     </div>
   </section>
 
   <section id="quotes" class="row-full-width">
-    <div class="orbit" role="region" aria-label="Design Quotes" data-orbit>
-      <ul class="orbit-container">
-        <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
-        <button class="orbit-next" aria-label="next"><span class="show-for-sr">Next Slide</span>&#9654;</button>
-        <li class="is-active orbit-slide">
-          <div>
-            <h2>Design can be art. Design can be aesthetics. Design is simple, that’s why it’s so hard.<span>- Paul Rand</span></h2>
-          </div>
-        </li>
-        <li class="orbit-slide">
-          <div>
-            <h2>Design is like a mom, nobody notices when she’s around, but everybody misses her when she’s not.<span>- Santiago Borray</span></h2>
-          </div>
-        </li>
-
-      </ul>
-      <nav class="orbit-bullets">
-        <button class="is-active" data-slide="0">
-          <span class="show-for-sr">First slide details.</span>
-          <span class="show-for-sr">Current Slide</span></button>
-        <button data-slide="1">
-          <span class="show-for-sr">Second slide details.</span>
-        </button>
-      </nav>
+    <div class="row">
+      <div class="columns small-12">
+        <div id="slick-quotes" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "autoplaySpeed": 5000, "dots": true, "fade": true }'>
+          <div><h2>Design can be art. Design can be aesthetics. Design is simple, that’s why it’s so hard.<span>- Paul Rand</span></h2></div>
+          <div><h2>Design is like a mom, nobody notices when she’s around, but everybody misses her when she’s not.<span>- Santiago Borray</span></h2></div>
+          <div><h2>Some people like what you do, some people hate what you do, but most people simply don’t give a damn.<span>- Charles Bukowski</span></h2></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="why" data-magellan-target="why" class="row-full-width">
     <div class="row">
       <div class="columns small-12 text-left">
-        <h2>Why</h2>
+        <h2><span class="icon-question-circle"></span>Why</h2>
         <p>We have the experience and attention to detail to deliver work that elevates your brand and web presence. Coming from backgrounds in Advertising, Print tand Web Design and Web Development we can create full content managed websites, responsive HTML emails, HTML5 banners, stationery,  and everything in between. We are small enough to keep our rates are very competitive and we can handle your job without the extra overheads of an agency.</p>
         <p>Using current best practice streamlined workflows, we work in an agile fashion and have a short turnaround time. Technologies we use are Craft CMS, Wordpress, Foundation 5/6, Sass, Grunt, Gulp, NPM and many others. Our process is one of constant discovery and iterative improvement. We make our sites to gracefully degrade for older browsers and take advantage of features only offered by new browsers built to be “mobile first”.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12 text-left">
+        <h3>Our Process</h3>
+      </div>
+    </div>
+
+    <div class="row-full-width" id="process">
+
+      <div class="row">
+        <div class="columns small-12 medium-4 text-left collapse discover">
+          <span class="icon-lightbulb-o"></span>
+          <h2>Discover</h2>
+          <p>We find out what you need and what you don’t need and create a tailored plan.</p>
+        </div>
+        <div class="columns small-12 medium-4 text-left collapse design">
+          <span class="icon-pencil-square-o"></span>
+          <h2>Design</h2>
+          <p>We create wireframes and then full designs with neccessary iterations.</p>
+        </div>
+        <div class="columns small-12 medium-4 text-left collapse develop">
+          <span class="icon-code"></span>
+          <h2>Develop</h2>
+          <p>We create the frontend and/orbackend using current bestpractices and technologies.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns small-12 text-left">
+        <h3>Favourite Tools</h3>
+        <div class="row medium-up-3 tools align-middle">
+          <div class="column">
+            <img src="{{root}}assets/img/logos/craft.png" alt="Craft CMS" title="Craft CMS" />
+          </div>
+          <div class="column">
+            <img src="{{root}}assets/img/logos/wordpress.png" alt="WordPress" title="WordPress" />
+          </div>
+          <div class="column">
+            <img src="{{root}}assets/img/logos/foundation-6.png" alt="Foundation 6" title="Foundation 6" />
+          </div>
+          <div class="column">
+            <img src="{{root}}assets/img/logos/gulp.png" alt="Gulp" title="Gulp" />
+          </div>
+          <div class="column">
+            <img src="{{root}}assets/img/logos/sass.png" alt="Sass" title="Sass" />
+          </div>
         </div>
       </div>
+    </div>
+
   </section>
 
   <section id="work" data-magellan-target="work" class="row-full-width">
     <div class="row">
       <div class="columns small-12 text-left">
-        <h2>Work</h2>
+        <h2><span class="icon-laptop"></span>Work</h2>
+        <h3>Latest Work</h3>
+        <div class="row work-example">
+          <a rel="work" href="{{root}}assets/img/websites/skybo-1_2x.jpg" class="columns small-12 medium-6 large-3 work">
+            <img src="{{root}}assets/img/websites/skybo-1.jpg" title="SkyboJapan.com" alt="SkyboJapan.com"/>
+          </a>
+          <a rel="work" href="{{root}}assets/img/websites/skybo-2_2x.jpg" class="columns small-12 medium-6 large-3 work">
+            <img src="{{root}}assets/img/websites/skybo-2.jpg" title="SkyboJapan.com" alt="SkyboJapan.com" class="mobile"/>
+          </a>
+          <a rel="work" href="{{root}}assets/img/websites/skybo-3_2x.jpg" class="columns small-12 medium-6 large-3 work">
+            <img src="{{root}}assets/img/websites/skybo-3.jpg" title="SkyboJapan.com" alt="SkyboJapan.com"/>
+          </a>
+          <a rel="work" href="{{root}}assets/img/websites/skybo-4_2x.jpg" class="columns small-12 medium-6 large-3 work">
+            <img src="{{root}}assets/img/websites/skybo-4.jpg" title="SkyboJapan.com" alt="SkyboJapan.com"/>
+          </a>
+        </div>
         <h5><a href="">www.skybojapan.com</a></h5>
         <p>Skybo Japan needed a bi-lingual website quickly. They also wanted a refresh of their corporate ID. We designed a new logo and colour scheme to be used in a responsive website. One interesting feature is on the contact page. They needed a way for people to “build a trip”. We used Angular JS to create the trip builder. We used WordPress for the CMS and all fields are editable right down to the button labels in both English and Japanese. We were able to go from start to completed build in just under two weeks.</p>
       </div>
@@ -91,14 +149,139 @@
   <section id="contact" data-magellan-target="contact" class="row-full-width">
     <div class="row">
       <div class="columns small-12 text-left">
-        <h2>Contact</h2>
+        <h2><span class="icon-comments-o"></span>Contact</h2>
+        <p>If you think we would be a good fit for your business, fill out the form below. If you came to the internet to look at cat videos, well, you can click here. Alternatively, you can email us at <a href="mailto:hello@scrupulouscreative.com?subject=My%20Project"><span style="unicode-bidi:bidi-override; direction: rtl;">moc.evitaercsuolupurcs@olleh</span></a>. We look forward to working with you and creating something great.</p>
+        <form>
+          <div class="row">
+            <div class="columns small-12 large-6"><input type="text" placeholder="Your Name" name="name"/></div>
+            <div class="columns small-12 large-6"><input type="text" placeholder="Your Email" name="email"/></div>
+            <div class="columns small-12 large-6">
+                <select name="timezone">
+
+                  <option value="" disabled selected>Select Time Zone</option>
+
+                  <optgroup label="USA and Canada">
+                    <option timeZoneId="5" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+                    <option timeZoneId="9" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+                    <option timeZoneId="11" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+                    <option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                  </optgroup>
+                  <optgroup label="UK">
+                    <option timeZoneId="30" gmtAdjustment="GMT+00:00" useDaylightTime="1" value="0">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                  </optgroup>
+                  <optgroup label="Australia, NZ and Japan">
+                    <option timeZoneId="67" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Perth</option>
+                    <option timeZoneId="69" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                    <option timeZoneId="72" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Adelaide</option>
+                    <option timeZoneId="73" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Darwin</option>
+                    <option timeZoneId="74" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">(GMT+10:00) Brisbane</option>
+                    <option timeZoneId="75" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                    <option timeZoneId="76" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Hobart</option>
+                    <option timeZoneId="80" gmtAdjustment="GMT+12:00" useDaylightTime="1" value="12">(GMT+12:00) Auckland, Wellington</option>
+                  </optgroup>
+                  <optgroup label="All">
+                    <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</option>
+                    <option timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">(GMT-11:00) Midway Island, Samoa</option>
+                    <option timeZoneId="3" gmtAdjustment="GMT-10:00" useDaylightTime="0" value="-10">(GMT-10:00) Hawaii</option>
+                    <option timeZoneId="4" gmtAdjustment="GMT-09:00" useDaylightTime="1" value="-9">(GMT-09:00) Alaska</option>
+                    <option timeZoneId="5" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Pacific Time (US & Canada)</option>
+                    <option timeZoneId="6" gmtAdjustment="GMT-08:00" useDaylightTime="1" value="-8">(GMT-08:00) Tijuana, Baja California</option>
+                    <option timeZoneId="7" gmtAdjustment="GMT-07:00" useDaylightTime="0" value="-7">(GMT-07:00) Arizona</option>
+                    <option timeZoneId="8" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+                    <option timeZoneId="9" gmtAdjustment="GMT-07:00" useDaylightTime="1" value="-7">(GMT-07:00) Mountain Time (US & Canada)</option>
+                    <option timeZoneId="10" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">(GMT-06:00) Central America</option>
+                    <option timeZoneId="11" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Central Time (US & Canada)</option>
+                    <option timeZoneId="12" gmtAdjustment="GMT-06:00" useDaylightTime="1" value="-6">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+                    <option timeZoneId="13" gmtAdjustment="GMT-06:00" useDaylightTime="0" value="-6">(GMT-06:00) Saskatchewan</option>
+                    <option timeZoneId="14" gmtAdjustment="GMT-05:00" useDaylightTime="0" value="-5">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+                    <option timeZoneId="15" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Eastern Time (US & Canada)</option>
+                    <option timeZoneId="16" gmtAdjustment="GMT-05:00" useDaylightTime="1" value="-5">(GMT-05:00) Indiana (East)</option>
+                    <option timeZoneId="17" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">(GMT-04:00) Atlantic Time (Canada)</option>
+                    <option timeZoneId="18" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">(GMT-04:00) Caracas, La Paz</option>
+                    <option timeZoneId="19" gmtAdjustment="GMT-04:00" useDaylightTime="0" value="-4">(GMT-04:00) Manaus</option>
+                    <option timeZoneId="20" gmtAdjustment="GMT-04:00" useDaylightTime="1" value="-4">(GMT-04:00) Santiago</option>
+                    <option timeZoneId="21" gmtAdjustment="GMT-03:30" useDaylightTime="1" value="-3.5">(GMT-03:30) Newfoundland</option>
+                    <option timeZoneId="22" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Brasilia</option>
+                    <option timeZoneId="23" gmtAdjustment="GMT-03:00" useDaylightTime="0" value="-3">(GMT-03:00) Buenos Aires, Georgetown</option>
+                    <option timeZoneId="24" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Greenland</option>
+                    <option timeZoneId="25" gmtAdjustment="GMT-03:00" useDaylightTime="1" value="-3">(GMT-03:00) Montevideo</option>
+                    <option timeZoneId="26" gmtAdjustment="GMT-02:00" useDaylightTime="1" value="-2">(GMT-02:00) Mid-Atlantic</option>
+                    <option timeZoneId="27" gmtAdjustment="GMT-01:00" useDaylightTime="0" value="-1">(GMT-01:00) Cape Verde Is.</option>
+                    <option timeZoneId="28" gmtAdjustment="GMT-01:00" useDaylightTime="1" value="-1">(GMT-01:00) Azores</option>
+                    <option timeZoneId="29" gmtAdjustment="GMT+00:00" useDaylightTime="0" value="0">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+                    <option timeZoneId="30" gmtAdjustment="GMT+00:00" useDaylightTime="1" value="0">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+                    <option timeZoneId="31" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+                    <option timeZoneId="32" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+                    <option timeZoneId="33" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+                    <option timeZoneId="34" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+                    <option timeZoneId="35" gmtAdjustment="GMT+01:00" useDaylightTime="1" value="1">(GMT+01:00) West Central Africa</option>
+                    <option timeZoneId="36" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Amman</option>
+                    <option timeZoneId="37" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+                    <option timeZoneId="38" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Beirut</option>
+                    <option timeZoneId="39" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Cairo</option>
+                    <option timeZoneId="40" gmtAdjustment="GMT+02:00" useDaylightTime="0" value="2">(GMT+02:00) Harare, Pretoria</option>
+                    <option timeZoneId="41" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+                    <option timeZoneId="42" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Jerusalem</option>
+                    <option timeZoneId="43" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Minsk</option>
+                    <option timeZoneId="44" gmtAdjustment="GMT+02:00" useDaylightTime="1" value="2">(GMT+02:00) Windhoek</option>
+                    <option timeZoneId="45" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+                    <option timeZoneId="46" gmtAdjustment="GMT+03:00" useDaylightTime="1" value="3">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+                    <option timeZoneId="47" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Nairobi</option>
+                    <option timeZoneId="48" gmtAdjustment="GMT+03:00" useDaylightTime="0" value="3">(GMT+03:00) Tbilisi</option>
+                    <option timeZoneId="49" gmtAdjustment="GMT+03:30" useDaylightTime="1" value="3.5">(GMT+03:30) Tehran</option>
+                    <option timeZoneId="50" gmtAdjustment="GMT+04:00" useDaylightTime="0" value="4">(GMT+04:00) Abu Dhabi, Muscat</option>
+                    <option timeZoneId="51" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">(GMT+04:00) Baku</option>
+                    <option timeZoneId="52" gmtAdjustment="GMT+04:00" useDaylightTime="1" value="4">(GMT+04:00) Yerevan</option>
+                    <option timeZoneId="53" gmtAdjustment="GMT+04:30" useDaylightTime="0" value="4.5">(GMT+04:30) Kabul</option>
+                    <option timeZoneId="54" gmtAdjustment="GMT+05:00" useDaylightTime="1" value="5">(GMT+05:00) Yekaterinburg</option>
+                    <option timeZoneId="55" gmtAdjustment="GMT+05:00" useDaylightTime="0" value="5">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+                    <option timeZoneId="56" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">(GMT+05:30) Sri Jayawardenapura</option>
+                    <option timeZoneId="57" gmtAdjustment="GMT+05:30" useDaylightTime="0" value="5.5">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+                    <option timeZoneId="58" gmtAdjustment="GMT+05:45" useDaylightTime="0" value="5.75">(GMT+05:45) Kathmandu</option>
+                    <option timeZoneId="59" gmtAdjustment="GMT+06:00" useDaylightTime="1" value="6">(GMT+06:00) Almaty, Novosibirsk</option>
+                    <option timeZoneId="60" gmtAdjustment="GMT+06:00" useDaylightTime="0" value="6">(GMT+06:00) Astana, Dhaka</option>
+                    <option timeZoneId="61" gmtAdjustment="GMT+06:30" useDaylightTime="0" value="6.5">(GMT+06:30) Yangon (Rangoon)</option>
+                    <option timeZoneId="62" gmtAdjustment="GMT+07:00" useDaylightTime="0" value="7">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+                    <option timeZoneId="63" gmtAdjustment="GMT+07:00" useDaylightTime="1" value="7">(GMT+07:00) Krasnoyarsk</option>
+                    <option timeZoneId="64" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+                    <option timeZoneId="65" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Kuala Lumpur, Singapore</option>
+                    <option timeZoneId="66" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+                    <option timeZoneId="67" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Perth</option>
+                    <option timeZoneId="68" gmtAdjustment="GMT+08:00" useDaylightTime="0" value="8">(GMT+08:00) Taipei</option>
+                    <option timeZoneId="69" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+                    <option timeZoneId="70" gmtAdjustment="GMT+09:00" useDaylightTime="0" value="9">(GMT+09:00) Seoul</option>
+                    <option timeZoneId="71" gmtAdjustment="GMT+09:00" useDaylightTime="1" value="9">(GMT+09:00) Yakutsk</option>
+                    <option timeZoneId="72" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Adelaide</option>
+                    <option timeZoneId="73" gmtAdjustment="GMT+09:30" useDaylightTime="0" value="9.5">(GMT+09:30) Darwin</option>
+                    <option timeZoneId="74" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">(GMT+10:00) Brisbane</option>
+                    <option timeZoneId="75" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+                    <option timeZoneId="76" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Hobart</option>
+                    <option timeZoneId="77" gmtAdjustment="GMT+10:00" useDaylightTime="0" value="10">(GMT+10:00) Guam, Port Moresby</option>
+                    <option timeZoneId="78" gmtAdjustment="GMT+10:00" useDaylightTime="1" value="10">(GMT+10:00) Vladivostok</option>
+                    <option timeZoneId="79" gmtAdjustment="GMT+11:00" useDaylightTime="1" value="11">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+                    <option timeZoneId="80" gmtAdjustment="GMT+12:00" useDaylightTime="1" value="12">(GMT+12:00) Auckland, Wellington</option>
+                    <option timeZoneId="81" gmtAdjustment="GMT+12:00" useDaylightTime="0" value="12">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+                    <option timeZoneId="82" gmtAdjustment="GMT+13:00" useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa</option>
+
+                  </optgroup>
+                </select>
+            </div>
+              <div class="columns small-12 large-6"><input type="text" placeholder="Your Skype" name="skype"/></div>
+              <div class="columns small-12"><textarea placeholder="Tell us about your project?" name="project-details"></textarea></div>
+            </div>
+
+            <div class="row align-right">
+              <div class="columns small-12 medium-6 medium-centered large-3"><input type="submit" name="submit" class="button yellow" /></div>
+            </div>
+
+        </form>
       </div>
     </div>
   </section>
 </div>
 
 <div class="row-full-width">
-  <img src="{{root}}assets/img/footer-ho-chi-minh.jpg" alt="Ho Chi Minh City Web Development" />
+  <img src="{{root}}assets/img/footer-ho-chi-minh.jpg" alt="Ho Chi Minh City Web Development"/>
 </div>
 
 

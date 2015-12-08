@@ -7,10 +7,32 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrupulous Creative</title>
+    <script src="{{root}}assets/js/pace.js"></script>
     <link rel="shortcut icon" href="{{root}}assets/img/favicon.ico"/>
+    <link rel="stylesheet" href="{{root}}assets/css/pace.css">
+    <script>
+      window.onload = function() {
+        Pace.start();
+
+        Pace.on("done", function(){
+          console.log("loaded");
+          var loader = new TimelineLite();
+          loader.to(".loadScreen", 0.5,{ alpha: 0, display: 'none' });
+        });
+      }
+    </script>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
+
   </head>
   <body>
+  <div class="loadScreen"
+      style="background: #000;
+      opacity: 0.95;
+      height: 100%;
+      width: 100%;
+      display: block;
+      position: absolute;
+      z-index: 100;"></div>
 
     {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
     {{> body}}

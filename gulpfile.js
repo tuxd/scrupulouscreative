@@ -27,6 +27,9 @@ var PATHS = {
     'bower_components/foundation-sites/scss',
     //'bower_components/motion-ui/src/'
   ],
+  pace: [
+    'bower_components/pace/pace.js'
+  ],
   javascript: [
     'bower_components/jquery/dist/jquery.js',
     'bower_components/what-input/what-input.js',
@@ -56,6 +59,9 @@ var PATHS = {
     'src/assets/js/gsap/EasePack.js',
     'src/assets/js/gsap/TweenLite.js',
     'src/assets/js/gsap/TimelineLite.js',
+    'bower_components/slick-carousel/slick/slick.js',
+    'bower_components/dropkick/build/js/dropkick.2.1.7.min.js',
+    'bower_components/colorbox/jquery.colorbox.js',
     'src/assets/js/app.js'
   ]
 };
@@ -99,6 +105,7 @@ gulp.task('styleguide', function(cb) {
   }, cb);
 });
 
+
 // Compile Sass into CSS
 // In production, the CSS is compressed
 gulp.task('sass', function() {
@@ -112,7 +119,7 @@ gulp.task('sass', function() {
 
   var minifycss = $.if(isProduction, $.minifyCss());
 
-  return gulp.src('src/assets/scss/app.scss')
+  return gulp.src(['src/assets/scss/app.scss','src/assets/scss/pace.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -143,6 +150,20 @@ gulp.task('javascript', function() {
     .pipe(gulp.dest('dist/assets/js'));
 });
 
+gulp.task('pace', function() {
+  var uglify = $.if(isProduction, $.uglify()
+    .on('error', function (e) {
+      console.log(e);
+    }));
+
+  return gulp.src(PATHS.pace)
+    .pipe($.sourcemaps.init())
+    .pipe($.concat('pace.js'))
+    .pipe(uglify)
+    .pipe($.if(!isProduction, $.sourcemaps.write()))
+    .pipe(gulp.dest('dist/assets/js'));
+});
+
 // Copy images to the "dist" folder
 // In production, the images are compressed
 gulp.task('images', function() {
@@ -157,7 +178,7 @@ gulp.task('images', function() {
 
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], 'styleguide', done);
+  sequence('clean', ['pages', 'sass', 'pace', 'javascript', 'images', 'copy'], 'styleguide', done);
 });
 
 // Start a server with LiveReload to preview the site in
@@ -173,7 +194,7 @@ gulp.task('default', ['build', 'server'], function() {
   gulp.watch(['src/pages/**/*.html'], ['pages', browser.reload]);
   gulp.watch(['src/{layouts,partials}/**/*.html'], ['pages:reset', browser.reload]);
   gulp.watch(['src/assets/scss/**/*.scss'], ['sass', browser.reload]);
-  gulp.watch(['src/assets/js/**/*.js'], ['javascript', browser.reload]);
+  gulp.watch(['src/assets/js/**/*.js'], ['javascript','pace', browser.reload]);
   gulp.watch(['src/assets/img/**/*'], ['images', browser.reload]);
   gulp.watch(['src/styleguide/**'], ['styleguide', browser.reload]);
 });
